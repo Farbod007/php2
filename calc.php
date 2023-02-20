@@ -1,5 +1,4 @@
 <?php
-
 include_once 'calc_process.php';
 if (isset($_POST['submit'])) {
   $num1 = $_POST['FirstNum'];     // Dit maakt $num1 gelijk met de input Firstnum.
