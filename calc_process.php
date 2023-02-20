@@ -1,36 +1,33 @@
 <?php 
-//Deze function zorgt dat DE rekenmachine kan berekenen.
-function compute()
-    { 
-        
-        $num1 = $_POST['FirstNum']; //Dit betkent $num1 is gelijk met input Firstnum 
-        $num2 =$_POST['SecNum'];//Dit betkent $num2 is gelijk met input Secnum
+// Deze function zorgt dat de rekenmachine kan berekenen.
+function compute($num1, $num2) {     
+    // De dropdown wordt gemaakt zodat je een methode kunt kiezen om te berekenen.
+    switch($_POST['dropdown']) 
+    {
+        // De addition wordt gemaakt zodat je kan optellen.
+        case "Addition":
+            $sum = $num1 + $num2;
+            return $sum;
 
-        //De dropdown wordt gemaakt zodat je een methode kunt kiezen om te berekenen.
-        switch($_POST['dropdown']) 
-        {
-            case "Addition"; //De addition wordt gemaakt zodat je kan optellen.
-              $sum = $num1 + $num2;
-              return $sum;
-              break;
-            case "Subtraction"; //De Subtraction wordt gemaakt zodat je kan aftrekken.
-              $diff = $num1 - $num2;
-              return $diff;
-              break;
-          case "Multiplication";//De Multiplication wordt gemaakt zodat je kan vermenigvuldigen.
-              $prod = $num1 * $num2;
-              return $prod;
-              break;
-          case "Division";//De divison wordt gemaakt zodat je kan delen.
-              $pro = $num1 / $num2;
-              return $pro;
-              break;
-            default://De default wordt gemaakt zodat je een error krijgt als je de dropdown niet gekozen had.
-            echo "Invalid Operation";
-        }
+        // De Subtraction wordt gemaakt zodat je kan aftrekken.
+        case "Subtraction":
+            $diff = $num1 - $num2;
+            return $diff;
+        
+        // De Multiplication wordt gemaakt zodat je kan vermenigvuldigen.
+        case "Multiplication":
+            $prod = $num1 * $num2;
+            return $prod;
+        
+        // De divison wordt gemaakt zodat je kan delen.
+        case "Division":
+            $pro = $num1 / $num2;
+            return $pro;
+
+        // De default wordt gemaakt zodat je een error krijgt als je de dropdown niet gekozen had.
+        default:
+            $invalidResult = "Invalid Operation";
+            return $invalidResult;
     }
-    echo "the result is:". compute();//Deze geeft de resultaat.
-    ?>
-<br>
-<!--Met deze link kan je terug naar calc.php-->
-<a href ="calc.php">back</a>
+}
+?>

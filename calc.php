@@ -1,18 +1,27 @@
+<?php
+
+include_once 'calc_process.php';
+if (isset($_POST['submit'])) {
+  $num1 = $_POST['FirstNum'];     // Dit maakt $num1 gelijk met de input Firstnum.
+  $num2 =$_POST['SecNum'];        // Dit maakt $num2 gelijk met de input Secnum.
+  echo "Het resultaat is: " . compute($num1, $num2); // Dit schrijft het resultaat en roept de functie compute op om de berekening te starten.
+}
+?>
 <html>
   <body>
     <!--deze code maakt rkenenmachine formulier-->
-     <form action ="calc_process.php" method= "POST">
-       <label>select an operation: </label>
-       <select name = "dropdown">
+    <form action="calc.php" method="post">
+      <label>Selecteer handeling: </label>
+      <select name = "dropdown">
         <option></option>
-        <option value = "Addition">Addtion</option>
-        <option value = "Subtraction">Subtraction</option>
-        <option value = "Multiplication">Multiplication</option>
-        <option value = "Division">Division</option>
-</select><br></br>
-Enter the first number: <input type="text" name = "FirstNum" required/><br></br>
-Enter the sec number: <input type="text" name = "SecNum" required/><br></br>
-<input type = "submit" value = "Enter"/>
-</form>
-</body>
-<html>
+        <option value = "Addition">Optelling</option>
+        <option value = "Subtraction">Aftrekking</option>
+        <option value = "Multiplication">Vermenigvuldigen</option>
+        <option value = "Division">Delen</option>
+      </select>
+      <p>Enter the first number: <input type="text" name="FirstNum" required/></p>
+      <p>Enter the second number: <input type="text" name="SecNum" required/></p>
+      <input type="submit" name="submit" value="Enter"/>
+    </form>
+  </body>
+</html>
