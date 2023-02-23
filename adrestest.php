@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
 }
 
 function adresTest($input) {
-    if ((preg_match('/^([a-z]+[0-9]{0,3})$/i', $input))){
+    if ((preg_match('/^([a-z]+[a-z ]+[ 0-9]{0,3})$/i', $input))){
         return "adres detected, test succeeded";
     } else {
         return "geen adres";
