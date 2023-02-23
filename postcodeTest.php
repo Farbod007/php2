@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
 }
 
 function dutchPostCodeTest($input) {
-    if (preg_match("/^[1-9][0-9]{3} ?(?!sa|sd|ss)[A-Z]{2}$/i", $input)) {
+    if (preg_match("/^[1-9][0-9]{3}[' '] ?(?!sa|sd|ss)[A-Z]{2}$/", $input)) {
         return "Dutch Postcode detected, test succeeded";
     } else {
         return "Not a dutch postcode";
