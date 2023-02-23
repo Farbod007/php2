@@ -1,10 +1,10 @@
 <?php
 if (isset($_POST['submit'])) {
     $input = $_POST['input'];
-    echo gamilTest($input); 
+    echo emailTest($input); 
 }
 
-function gamilTest($input) {
+function emailTest($input) {
     if ((preg_match('/^([a-z]+[0-9]*)@([a-z]+)\.([a-z]{2,5})$/i', $input))){
         return "gamil detected, test succeeded";
     } else {
@@ -21,7 +21,7 @@ function gamilTest($input) {
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="gamiltest.php">
+    <form method="POST" action="emailtest.php">
         <label>Input Gamil</label>
         <input type="text" name="input" />
         <input type="submit" name="submit" value="Submit" />
