@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['submit'])) {
     $input = $_POST['input'];
-    echo dutchPostCodeTest($input); 
+    echo dutchPostCodeTest($input);
 }
 
 function dutchPostCodeTest($input) {

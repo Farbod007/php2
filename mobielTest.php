@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['submit'])) {
     $input = $_POST['input'];
-    echo dutchPhoneNumberTest($input); 
+    echo dutchPhoneNumberTest($input);
 }
 
 function dutchPhoneNumberTest($input) {
